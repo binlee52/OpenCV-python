@@ -10,8 +10,7 @@ switch_case ={
 def onChange(value):
     global image, title
 
-    add_value = value - int(image[0][0])
-    image = image + add_value
+    image[:] = value
     cv2.setTrackbarPos("Brightness", title, image[0][0])
     cv2.imshow(title, image)
 

@@ -5,9 +5,8 @@ import cv2
 def onChange(value):
     global image, title
 
-    add_value = value - int(image[0][0])
-    print("추가 화소값:", add_value)
-    image = image + add_value
+    print("추가 화소값:", value - int(image[0][0]))
+    image[:] = value
     cv2.imshow(title, image)
 
 

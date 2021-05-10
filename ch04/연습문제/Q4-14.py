@@ -31,6 +31,7 @@ def onMouse(event, x, y, flags, param):
         cv2.imshow(title, image)
         pt = (-1, -1)
 
+
 image = np.full((300, 500, 3), (255, 255, 255), np.uint8)
 pt = (-1, -1)
 title = "Draw Event"
