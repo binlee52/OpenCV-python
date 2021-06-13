@@ -1,8 +1,8 @@
 import numpy as np
 import cv2
 
-pts1 = np.array([(200, 50, 1), (400, 50, 1),
-                 (400, 250, 1), (200, 250, 1)], np.float32)
+pts1 = np.array([(100, 100, 1), (400, 100, 1),
+                 (400, 250, 1), (100, 250, 1)], np.float32)
 
 theta = 45 * np.pi / 180
 m = np.array([[np.cos(theta), -np.sin(theta), 0],
