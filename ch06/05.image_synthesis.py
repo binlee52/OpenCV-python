@@ -5,7 +5,6 @@ image2 = cv2.imread("images/add2.jpg")
 if image1 is None or image2 is None:
     raise Exception("영상파일 읽기 오류")
 
-print(image1.shape, image2.shape)
 # 영상 합성 방법
 alpha, beta = 0.6, 0.7
 add_img1 = cv2.add(image1, image2)
