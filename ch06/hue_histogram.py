@@ -11,7 +11,7 @@ def draw_hist_hue(hist, shape=(200, 256, 3)):
     hsv_palette = make_palette(hist.shape[0])
     hist_img = np.full(shape, 255, np.uint8)
     cv2.normalize(hist, hist, 0, shape[0], cv2.NORM_MINMAX)
-    
+
     gap = hist_img.shape[1]/hist.shape[0]
     for i, h in enumerate(hist):
         x, w = int(round(i*gap)), int(round(gap))
@@ -21,7 +21,7 @@ def draw_hist_hue(hist, shape=(200, 256, 3)):
     return cv2.flip(hist_img, 0)
 
 
-image = cv2.imread("images/bright.png", cv2.IMREAD_COLOR)
+image = cv2.imread("../ch07/images/bright.png", cv2.IMREAD_COLOR)
 if image is None:
     raise Exception("영상파일 읽기 오류")
 

@@ -32,7 +32,7 @@ def pixel_access5(image):
     image5 = 255 - image
     return image5
 
-image = cv2.imread("images/bright.png", cv2.IMREAD_GRAYSCALE)
+image = cv2.imread("../ch07/images/bright.png", cv2.IMREAD_GRAYSCALE)
 if image is None:
     raise Exception("영상파일 읽기 오류")
 
