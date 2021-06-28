@@ -15,6 +15,7 @@ for x in [b, g, r]:
 dst = cv2.merge((b, g, r))
 dst2 = cv2.filter2D(image, -1, bmask)
 dst2 = cv2.filter2D(dst2, -1, smask)
-cv2.imshow("image", dst)
+cv2.imshow("image", image)
+cv2.imshow("dst", dst)
 cv2.imshow("dst2", dst2)
 cv2.waitKey(0)
