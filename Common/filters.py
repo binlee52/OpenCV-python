@@ -1,22 +1,20 @@
 import numpy as np, cv2
 
-def filter(image, mask):
-    return cv2.filter2D(image, -1, mask)
-
 # def filter(image, mask):
-#     # image = np.array(image, np.float32)
-#     rows, cols = image.shape[:2]
-#     dst = np.zeros((rows, cols), np.float32)
-#     ycenter, xcenter = rows//2, cols//2
-#
-#     for i in range(ycenter, rows - ycenter):
-#         for j in range(xcenter, cols-xcenter):
-#             y1, y2 = i - ycenter, i + ycenter + 1
-#             x1, x2 = j - xcenter, j + xcenter + 1
-#             roi = image[y1:y2, x1:x2].astype("float32")
-#             tmp = cv2.multiply(roi, mask)
-#             dst[i, j] = cv2.sumElems(tmp)[0]
-#     return dst
+#     return cv2.filter2D(image, -1, mask)
+
+def filter(image, mask):
+    rows, cols = image.shape[:2]
+    dst = np.zeros((rows, cols), np.float32)
+
+    for i in range(1, rows -1):
+        for j in range(1, cols - 1):
+            y1, y2 = i - 1, i + 2
+            x1, x2 = j - 1, j + 2
+            roi = image[y1:y2, x1:x2].astype('float32')
+            tmp = cv2.multiply(roi, mask)
+            dst[i, j] = cv2.sumElems(tmp)[0]
+    return dst
 
 def differential(image, data1, data2):
     # 추가
