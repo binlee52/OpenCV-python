@@ -30,10 +30,10 @@ image = cv2.imread("images/aircraft.jpg", cv2.IMREAD_GRAYSCALE)
 if image is None:
     raise Exception("영상파일 읽기 에러")
 
-dst1 = scaling(image, (150, 200))
-dst2 = scaling2(image, (150, 200))
-dst3 = time_check(scaling, image, (300, 400), "[방법1]: 정방행렬 방식>")
-dst4 = time_check(scaling2, image, (300, 400), "[방법2]: 반복문 방식>")
+dst1 = scaling(image, (800, 600))
+dst2 = scaling2(image, (800, 600))
+dst3 = time_check(scaling, image, (800, 600), "[방법1]: 정방행렬 방식>")
+dst4 = time_check(scaling2, image, (800, 600), "[방법2]: 반복문 방식>")
 
 cv2.imshow("image", image)
 cv2.imshow("dst1- zoom out", dst1)
