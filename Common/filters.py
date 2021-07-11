@@ -31,3 +31,9 @@ def differential(image, data1, data2):
     dst1 = np.clip(dst1, 0, 255).astype('uint8')
     dst2 = np.clip(dst2, 0, 255).astype('uint8')
     return dst, dst1, dst2
+
+def erode(img, mask):
+    return cv2.erode(img, mask)
+
+def dilate(img, mask):
+    return cv2.dilate(img, mask)
